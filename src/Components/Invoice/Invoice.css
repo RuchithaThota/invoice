@@ -1,0 +1,82 @@
+.invoice-box {
+  border: 3px solid black;
+  width: 90%;
+  margin: 0 auto;
+  /* height: auto; */
+  overflow-y: visible;
+}
+.invoice-heading {
+  position: relative;
+  text-align: center;
+  padding: 0.5em;
+}
+
+.invoice-heading > p {
+  font-weight: bold;
+  padding-bottom: 0.5em;
+}
+.address-invoice {
+  /* outline: 1px solid red; */
+  width: 100%;
+  display: flex;
+}
+.address-invoice .address {
+  border-top: 2px solid black;
+  border-right: 1px solid black;
+  border-bottom: 2px solid black;
+  width: 50%;
+  padding: 0.5em;
+}
+.address-invoice .address textarea {
+  width: 100%;
+  height: 100%;
+  resize: none;
+  border: none;
+  outline: none;
+  word-break: break-all;
+  font-size: 1em;
+}
+.address-invoice .invoice {
+  border-top: 2px solid black;
+  border-left: 1px solid black;
+  border-bottom: 2px solid black;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em;
+}
+.address-invoice .invoice label {
+  font-size: 1em;
+}
+.address-invoice .invoice span {
+  font-size: 1em;
+}
+.invoice-box table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0 auto;
+}
+.invoice-box td,
+.invoice-box th {
+  border: 1px solid #000;
+  text-align: left;
+  padding: 8px;
+}
+.invoice-box .signature {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5em 0.7em 0.7em;
+}
+.invoice-box .signature2 {
+  text-align: right;
+  padding: 2em 10em 0.7em 0;
+}
+.invoice-box .bottom-line {
+  /* border: 1px solid red; */
+  margin: 1em;
+}
+.invoice-box .bottom-line p {
+  padding-bottom: 0.5em;
+}

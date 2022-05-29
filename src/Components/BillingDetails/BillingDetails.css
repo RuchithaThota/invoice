@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+.products table {
+  border-collapse: collapse;
+  width: 80%;
+  margin: 0 auto;
+}
+.products table td,
+.products table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+.products table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #41bbca;
+
+  color: white;
+}
+.products {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.submit-btn {
+  background-color: #41bbca;
+  color: white;
+  outline: none;
+  text-decoration: none;
+  border: none;
+  padding: 5px 10px;
+  font-size: 18px;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 540px) {
+  table {
+    max-width: 100%;
+  }
+  table th,
+  table td {
+    font-size: 10px;
+  }
+}
