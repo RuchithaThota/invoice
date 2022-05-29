@@ -313,11 +313,10 @@ const BillingEntry = () => {
           </select>
           <select
             value={billingEntry.icon}
-            name="materialIcons"
+            name="icon"
             onChange={handleChange}
             required
           >
-            <option>Select</option>
             {materialIcons.map((icon) => (
               <option value={icon}>{icon}</option>
             ))}

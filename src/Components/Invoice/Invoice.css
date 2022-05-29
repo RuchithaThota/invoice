@@ -1,6 +1,6 @@
 .invoice-box {
   border: 3px solid black;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   /* height: auto; */
   overflow-y: visible;
@@ -56,6 +56,7 @@
   border-collapse: collapse;
   width: 100%;
   margin: 0 auto;
+  /* table-layout: fixed; */
 }
 .invoice-box td,
 .invoice-box th {
