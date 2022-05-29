@@ -56,6 +56,8 @@ const Invoice = () => {
             {billingAddress.address.split(",")[0]}
             <br />
             {billingAddress.address.split(",")[1]}
+            <br />
+            {billingAddress.address.split(",")[2]}
           </div>
           <div className="invoice">
             <div>
