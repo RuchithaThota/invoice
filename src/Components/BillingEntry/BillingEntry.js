@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./BillingEntry.css";
-import useProductStore from "../Store/ProductStore";
 import useBillingStore from "../Store/BillingStore";
 import useBillingAddressStore from "../Store/BillingAddressStore";
 import BillingDetails from "../BillingDetails/BillingDetails";
@@ -34,7 +33,6 @@ const BillingEntry = () => {
       const d = new Date();
       d.setMinutes(d.getMinutes() - d.getTimezoneOffset());
       return d.toISOString().slice(0, -8);
-      
     })(),
     invoiceNo: "",
     orderNo: "",
