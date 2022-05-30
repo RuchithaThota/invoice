@@ -239,43 +239,99 @@ const Invoice = () => {
                 <td>{row.qtyNo}</td>
                 <td>{row.kg}</td>
                 <td>{row.rateKg}</td>
-                <td>{row.amount}</td>
+                <td>{row.kg * row.rateKg}</td>
               </tr>
             ))}
           </tbody>
           <tr>
             <td></td>
             <td colSpan={4}></td>
-            <th>Total:</th>
-            <td></td>
-            <td colSpan={2}>{totalAmount}</td>
+            <td
+              style={{
+                fontWeight: "bold",
+                borderBottom: "1px solid black",
+              }}
+            >
+              Total:
+            </td>
+            <td
+              style={{
+                borderBottom: "1px solid black",
+              }}
+            ></td>
+            <td
+              colSpan={2}
+              style={{
+                borderBottom: "1px solid black",
+              }}
+            >
+              {totalAmount}
+            </td>
           </tr>
           <tr>
             <td></td>
             <td colSpan={4}></td>
-            <th>CGST : 9%</th>
-            <td></td>
-            <td colSpan={2}>{gstCut}</td>
+            <td
+              style={{
+                fontWeight: "bold",
+                borderBottom: "1px solid black",
+              }}
+            >
+              CGST : 9%
+            </td>
+            <td
+              style={{
+                borderBottom: "1px solid black",
+              }}
+            ></td>
+            <td
+              colSpan={2}
+              style={{
+                borderBottom: "1px solid black",
+              }}
+            >
+              {gstCut}
+            </td>
           </tr>
           <tr>
             <td></td>
             <td colSpan={4}></td>
 
-            <th>SGST : 9%</th>
-            <td></td>
-            <td colSpan={2}>{gstCut}</td>
+            <td
+              style={{
+                fontWeight: "bold",
+                borderBottom: "1px solid black",
+              }}
+            >
+              SGST : 9%
+            </td>
+            <td
+              style={{
+                borderBottom: "1px solid black",
+              }}
+            ></td>
+            <td
+              colSpan={2}
+              style={{
+                borderBottom: "1px solid black",
+              }}
+            >
+              {gstCut}
+            </td>
           </tr>
-          {/* <tr>
-            <td colSpan={5}></td>
-
-            <th>ROUND OFF</th>
-            <td colSpan={2}>0.24</td>
-          </tr> */}
           <tr>
             <td></td>
-            <th colSpan={4} style={{ textAlign: "center" }}>
+            <td
+              colSpan={4}
+              style={{
+                textAlign: "center",
+                border: "1px solid black",
+                fontWeight: "bold",
+              }}
+            >
               {wordify(Math.round(totalAmount + gstCut + gstCut))}
-            </th>
+              only
+            </td>
             <td></td>
             <td></td>
           </tr>
@@ -283,9 +339,27 @@ const Invoice = () => {
             <td> </td>
             <td colSpan={4}></td>
 
-            <th>Grand Total:</th>
-            <td></td>
-            <td colSpan={2}>Rs.{Math.round(totalAmount + gstCut + gstCut)}</td>
+            <td
+              style={{
+                fontWeight: "bold",
+                borderTop: "1px solid black",
+              }}
+            >
+              Grand Total:
+            </td>
+            <td
+              style={{
+                borderTop: "1px solid black",
+              }}
+            ></td>
+            <td
+              colSpan={2}
+              style={{
+                borderTop: "1px solid black",
+              }}
+            >
+              Rs.{Math.round(totalAmount + gstCut + gstCut)}
+            </td>
           </tr>
         </table>
         <div className="signature">

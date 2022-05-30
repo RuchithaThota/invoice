@@ -94,16 +94,6 @@ const BillingEntry = () => {
     setBillingEntry({ ...billingEntry, [name]: value });
   };
 
-  //setHsnNo
-  const setHsnNo = (material) => {
-    const hsnNumber = materials.find((obj) => {
-      if (obj.material === material) {
-        return obj.hsnNo;
-      }
-    });
-    setBillingEntry({ ...billingEntry, hsnNo: hsnNumber });
-  };
-
   //addresses
   const addresses = [
     "Select To Address",
