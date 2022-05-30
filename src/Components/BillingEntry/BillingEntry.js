@@ -96,7 +96,6 @@ const BillingEntry = () => {
 
   //addresses
   const addresses = [
-    "Select To Address",
     "ADITYA ENGINEERS	PRASHANTHI NAGAR	KUKATPALLY,HYDERABAD,	GSTIN : 36AAOFA2372F1Z1",
     "ANJANA ENGG WORKS	RC PURAM	HYDERABAD,GSTIN : 36AEWPB6015N3Z1	",
     "ASHOKA ROAD EQUIPMENT AND MFC. PVT. LTD.		HYDERABAD.	,GSTIN : 36AANCA0669D1ZP	",
@@ -172,7 +171,7 @@ const BillingEntry = () => {
     },
   ];
   //materialIcons
-  const materialIcons = ["icon", "∅", "▢"];
+  const materialIcons = ["∅", "▢"];
   //handleValidation
   const handleValidation = (billingEntry) => {
     const errors = {};
@@ -263,6 +262,7 @@ const BillingEntry = () => {
             onChange={handleChange}
             required
           >
+            <option>Select Address</option>
             {addresses.map((address) => (
               <option value={address}>{address}</option>
             ))}
@@ -284,6 +284,7 @@ const BillingEntry = () => {
             onChange={handleChange}
             required
           >
+            <option value="">icon</option>
             {materialIcons.map((icon) => (
               <option value={icon}>{icon}</option>
             ))}
@@ -297,24 +298,30 @@ const BillingEntry = () => {
           />
           <input
             value={billingEntry.qtyNo}
-            type="text"
+            type="number"
             placeholder="qtyNo"
             name="qtyNo"
+            pattern="[0-9]"
+            inputMode="numeric"
             onChange={handleChange}
           />
           <input
             value={billingEntry.kg}
-            type="text"
+            type="number"
             placeholder="quantity in kgs"
             name="kg"
+            pattern="[0-9]"
+            inputMode="numeric"
             onChange={handleChange}
           />
           <input
             value={billingEntry.rateKg}
-            type="text"
+            type="number"
             placeholder="rate per kg"
             name="rateKg"
             onChange={handleChange}
+            pattern="[0-9]"
+            inputMode="numeric"
           />
           <button className="add" onClick={handleSubmit} type="submit">
             Add

@@ -22,7 +22,8 @@ const Invoice = () => {
   const gstCut = React.useMemo(() => {
     let sum = 0;
     billingEntries.forEach((entriesList) => {
-      sum += parseFloat(entriesList.kg) * parseFloat(entriesList.rateKg);
+      sum +=
+        parseFloat(entriesList.kg) * parseFloat(entriesList.rateKg).toFixed(2);
     });
     return (9 / 100) * sum;
   }, [billingEntries]);
