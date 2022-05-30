@@ -70,8 +70,9 @@ const BillingDetails = () => {
               <td>{billingEntry.kg}</td>
               <td>{billingEntry.rateKg}</td>
               <td>
-                {/* {parseFloat(billingEntry.kg) *
-                  parseFloat(billingEntry.rateKg) } */}
+                {(
+                  parseFloat(billingEntry.kg) * parseFloat(billingEntry.rateKg)
+                ).toFixed(2)}
               </td>
               <td>
                 <i
