@@ -17,27 +17,24 @@ const BillingEntry = () => {
   const [errors, setErrors] = useState({
     dateTime: "",
     invoiceNo: "",
-    orderNo: "",
-    gstnNo: "",
     address: "",
     materialName: "",
-    icon: "",
     materialDescription: "",
-    qtyNo: "",
     kg: "",
     rateKg: "",
-    amount: "",
   });
   //billingEntry
   const [billingEntry, setBillingEntry] = useState({
     dateTime: (() => {
-      const d = new Date();
-      d.setMinutes(d.getMinutes() - d.getTimezoneOffset());
-      return d.toISOString().slice(0, -8);
+      var today = new Date();
+      var dd = String(today.getDate()).padStart(2, "0");
+      var mm = String(today.getMonth() + 1).padStart(2, "0");
+      var yyyy = today.getFullYear();
+      return dd + "/" + mm + "/" + yyyy;
     })(),
     invoiceNo: "",
     orderNo: "",
-    gstnNo: "36AACFD5005A1Z9",
+    // gstnNo: "36AACFD5005A1Z9",
     address: "",
     materialName: "",
     icon: "",
@@ -64,13 +61,11 @@ const BillingEntry = () => {
         qtyNo: billingEntry.qtyNo,
         kg: billingEntry.kg,
         rateKg: billingEntry.rateKg,
-        amount: billingEntry.amount,
       });
       setBillingAddress({
         date: billingEntry.dateTime,
         invoiceNo: billingEntry.invoiceNo,
         orderNo: billingEntry.orderNo,
-        gstnNo: billingEntry.gstnNo,
         address: billingEntry.address,
       });
       // console.log(billingEntries)
@@ -199,16 +194,9 @@ const BillingEntry = () => {
     if (!billingEntry.invoiceNo) {
       errors.invoiceNo = "invoiceNo";
     }
-
-    if (!billingEntry.orderNo) {
-      errors.orderNo = "orderNo";
-    }
-    if (!billingEntry.gstnNo) {
-      errors.gstnNo = "gstnNo";
-    }
-    if (!billingEntry.icon || !billingEntry.icon === null) {
-      errors.address = "icon";
-    }
+    // if (!billingEntry.dateTime) {
+    //   errors.dateTime = "date";
+    // }
     if (!billingEntry.address || !billingEntry.address === null) {
       errors.address = "address";
     }
@@ -218,18 +206,14 @@ const BillingEntry = () => {
     if (!billingEntry.materialDescription) {
       errors.materialDescription = "material description";
     }
-    if (!billingEntry.qtyNo) {
-      errors.qtyNo = "qtyNo";
-    }
+
     if (!billingEntry.kg) {
       errors.kg = "kg";
     }
     if (!billingEntry.rateKg) {
       errors.rateKg = "rateKg";
     }
-    if (!billingEntry.amount) {
-      errors.amount = "amount";
-    }
+
     if (Object.keys(errors).length > 0) {
       alert(`${Object.values(errors)} is required`);
     }
@@ -258,15 +242,15 @@ const BillingEntry = () => {
         </p>
         <form className="productentry">
           <input
-            type="datetime-local"
+            type="date"
             name="dateTime"
             value={billingEntry.dateTime}
             onChange={handleChange}
-            max={(() => {
-              const d = new Date();
-              d.setMinutes(d.getMinutes() - d.getTimezoneOffset());
-              return d.toISOString().slice(0, -8);
-            })()}
+            // max={(() => {
+            //   const d = new Date();
+            //   d.setMinutes(d.getMinutes() - d.getTimezoneOffset());
+            //   return d.toISOString().slice(0, -8);
+            // })()}
           />
           <input
             value={billingEntry.invoiceNo}
@@ -280,13 +264,6 @@ const BillingEntry = () => {
             type="text"
             placeholder="orderNo"
             name="orderNo"
-            onChange={handleChange}
-          />
-          <input
-            value={billingEntry.gstnNo}
-            type="text"
-            placeholder="GstnNo"
-            name="gstnNo"
             onChange={handleChange}
           />
 
@@ -347,13 +324,6 @@ const BillingEntry = () => {
             type="text"
             placeholder="rate per kg"
             name="rateKg"
-            onChange={handleChange}
-          />
-          <input
-            value={billingEntry.amount}
-            type="number"
-            placeholder="Amount"
-            name="amount"
             onChange={handleChange}
           />
           <button className="add" onClick={handleSubmit} type="submit">

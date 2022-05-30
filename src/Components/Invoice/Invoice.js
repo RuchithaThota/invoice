@@ -13,7 +13,7 @@ const Invoice = () => {
   const totalAmount = React.useMemo(() => {
     let sum = 0;
     billingEntries.forEach((entriesList) => {
-      sum += parseInt(entriesList.amount);
+      sum += parseFloat(entriesList.kg) * parseFloat(entriesList.rateKg);
     });
     return sum;
   }, [billingEntries]);
@@ -22,7 +22,7 @@ const Invoice = () => {
   const gstCut = React.useMemo(() => {
     let sum = 0;
     billingEntries.forEach((entriesList) => {
-      sum += parseInt(entriesList.amount);
+      sum += parseFloat(entriesList.kg) * parseFloat(entriesList.rateKg);
     });
     return (9 / 100) * sum;
   }, [billingEntries]);
@@ -212,7 +212,7 @@ const Invoice = () => {
                   marginLeft: "4em",
                 }}
               >
-                : {billingAddress.gstnNo}
+                :36AACFD5005A1Z9
               </span>
             </div>
           </div>

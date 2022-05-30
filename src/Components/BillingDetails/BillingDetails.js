@@ -21,18 +21,20 @@ const BillingDetails = () => {
     if (billingEntries.length < 1) {
       alert("No Billing Details To Submit...Please Add and Try Again");
       return;
+    } else {
+      navigate("/invoice");
     }
-    navigate("/invoice");
     // setBillingEntries([]);
     // setBillingAddress({});
   };
   const totalAmount = React.useMemo(() => {
     let sum = 0;
     billingEntries.forEach((entriesList) => {
-      sum += parseInt(entriesList.amount);
+      sum += parseFloat(entriesList.kg) * parseFloat(entriesList.rateKg);
     });
     return sum;
   }, [billingEntries]);
+
   return (
     <div className="products">
       <p
@@ -67,7 +69,9 @@ const BillingDetails = () => {
               <td>{billingEntry.qtyNo}</td>
               <td>{billingEntry.kg}</td>
               <td>{billingEntry.rateKg}</td>
-              <td>{billingEntry.amount}</td>
+              <td>
+                {parseFloat(billingEntry.kg) * parseFloat(billingEntry.rateKg)}
+              </td>
               <td>
                 <i
                   className="fas fa-trash"
@@ -97,9 +101,9 @@ const BillingDetails = () => {
           handleSubmit();
         }}
       >
-        <Link to="invoice">Submit</Link>
+        Submit
+        {/* <Link to="invoice">Submit</Link> */}
       </button>
-      
     </div>
   );
 };

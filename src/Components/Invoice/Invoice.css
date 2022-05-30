@@ -3,7 +3,7 @@
   width: 100%;
   margin: 0 auto;
   /* height: auto; */
-  overflow-y: visible;
+  /* overflow-y: visible; */
 }
 .invoice-heading {
   position: relative;
