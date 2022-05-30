@@ -240,7 +240,7 @@ const Invoice = () => {
                 <td>{row.qtyNo}</td>
                 <td>{row.kg}</td>
                 <td>{row.rateKg}</td>
-                <td>{row.kg * row.rateKg}</td>
+                <td>{(row.kg * row.rateKg).toFixed(2)}</td>
               </tr>
             ))}
           </tbody>
@@ -266,7 +266,7 @@ const Invoice = () => {
                 borderBottom: "1px solid black",
               }}
             >
-              {totalAmount}
+              {totalAmount.toFixed(2)}
             </td>
           </tr>
           <tr>
@@ -291,7 +291,7 @@ const Invoice = () => {
                 borderBottom: "1px solid black",
               }}
             >
-              {gstCut}
+              {gstCut.toFixed(2)}
             </td>
           </tr>
           <tr>
@@ -317,7 +317,7 @@ const Invoice = () => {
                 borderBottom: "1px solid black",
               }}
             >
-              {gstCut}
+              {gstCut.toFixed(2)}
             </td>
           </tr>
           <tr>
