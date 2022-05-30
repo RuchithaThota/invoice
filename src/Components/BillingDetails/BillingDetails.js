@@ -92,7 +92,7 @@ const BillingDetails = () => {
           marginTop: "20px",
         }}
       >
-        Total:{totalAmount}/-
+        Total:{totalAmount.toFixed(2)}/-
       </p>
       <button
         type="submit"
