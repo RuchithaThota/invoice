@@ -223,8 +223,8 @@ const BillingEntry = (props) => {
             type="number"
             placeholder="qtyNo"
             name="qtyNo"
-            pattern="[0-9]"
-            inputMode="numeric"
+            // pattern="[0-9]"
+            // inputMode="numeric"
             onChange={handleChange}
           />
           <input
@@ -232,8 +232,8 @@ const BillingEntry = (props) => {
             type="number"
             placeholder="quantity in kgs"
             name="kg"
-            pattern="[0-9]"
-            inputMode="numeric"
+            // pattern="[0-9]"
+            // inputMode="numeric"
             onChange={handleChange}
           />
           <input
@@ -242,8 +242,8 @@ const BillingEntry = (props) => {
             placeholder="rate per kg"
             name="rateKg"
             onChange={handleChange}
-            pattern="[0-9]"
-            inputMode="numeric"
+            // pattern="[0-9]"
+            // inputMode="numeric"
           />
           <button className="add" onClick={handleSubmit} type="submit">
             Add
